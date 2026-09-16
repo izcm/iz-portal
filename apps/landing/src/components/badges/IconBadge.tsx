@@ -14,19 +14,19 @@ export const IconBadge = ({ label, icon, className }: IconBadge) => (
         flex items-center justify-center
         w-12 h-12
         rounded-full
-        bg-black/40 border border-soft/16
+        bg-ground/40 border border-line/16
       "
     >
       {icon ? (
         icon
       ) : (
         // <i className={`devicon-${icon}-plain text-2xl`}></i>
-        <span className="text-lg font-semibold text-white">
+        <span className="text-lg font-semibold text-fg">
           {label[0].toUpperCase()}
         </span>
       )}
     </div>
 
-    <span className="text-xs text-neutral-400">{label}</span>
+    <span className="text-xs text-muted">{label}</span>
   </div>
 );

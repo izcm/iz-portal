@@ -14,7 +14,7 @@ export function IconLink({ children, className, ...props }: IconLinkProps) {
       {...props}
       className={cn(
         "flex items-center justify-between gap-3 w-full",
-        "text-sm text-neutral-400 no-underline transition-colors hover:text-white",
+        "text-sm text-muted no-underline transition-colors hover:text-fg",
         className,
       )}
     >

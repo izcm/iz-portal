@@ -10,7 +10,7 @@ export const Link = ({
   <a
     {...props}
     className={cn(
-      "text-sm text-neutral-400 no-underline transition-colors hover:text-white",
+      "text-sm text-muted no-underline transition-colors hover:text-fg",
       className,
     )}
   >

@@ -11,8 +11,8 @@
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
-    "@a2zb/react": "^1.0.3",
-    "@a2zb/styles": "^1.0.3",
+    "@a2zb/styles": "file:../../../shared-packages/styles",
+    "@a2zb/react": "file:../../../shared-packages/react",
     "clsx": "^2.1.1",
     "lucide-react": "^0.554.0",
     "react": "^19.1.1",

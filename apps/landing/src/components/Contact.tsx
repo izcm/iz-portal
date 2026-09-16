@@ -10,7 +10,7 @@ type ContactCardProps = Omit<ContactInfo, "id" | "href">;
 
 export const ContactCard = ({ icon, platform, handle }: ContactCardProps) => (
   <div className="flex items-center gap-4 px-4 py-3">
-    <div className="w-8 flex justify-center shrink-0 text-neutral-300">
+    <div className="w-8 flex justify-center shrink-0">
       <SiIcon icon={icon} />
     </div>
 
@@ -18,7 +18,7 @@ export const ContactCard = ({ icon, platform, handle }: ContactCardProps) => (
       <span className="w-full text-left text-xs text-muted leading-none">
         {platform}
       </span>
-      <span className="w-full text-left text-sm text-neutral-200 leading-tight font-medium">
+      <span className="w-full text-left text-sm text-fg leading-tight font-medium">
         {handle}
       </span>
     </div>

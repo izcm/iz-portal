@@ -23,7 +23,9 @@ export const DemoCard = ({
     <div
       className="
         flex flex-col-reverse md:flex-row-reverse gap-4
-        border border-white/5 rounded-lg p-4
+        border border-extra-faint rounded-lg p-4
+        rounded-lg bg-raised bg-raised-gradient border border-faint
+        hover:bg-fg/4
       "
     >
       {/* LINKS & TOOL-BADGES (RIGHT) */}
@@ -56,7 +58,7 @@ export const DemoCard = ({
           {isLive && (
             <IconLink
               href={liveUrl}
-              className="[&>svg:last-child]:text-gold text-neutral-400"
+              className="[&>svg:last-child]:text-gold text-muted"
             >
               <Radio className={cn(DEFAULT_ICON_CLASSES, "text-gold")} />
               See live
@@ -71,7 +73,7 @@ export const DemoCard = ({
 
       {/* TEXT INFO (LEFT) */}
       <div className="flex flex-col flex-1 min-w-0 gap-3 text-start">
-        <h3 className="text-white tracking-tight">
+        <h3 className="text-fg tracking-tight">
           {title}
           {isLive && (
             <span className="ml-3">
@@ -81,7 +83,7 @@ export const DemoCard = ({
         </h3>
 
         {/* DESCRIPTION */}
-        <div className="flex-1 flex flex-col gap-3 text-neutral-400 text-sm leading-relazed">
+        <div className="flex-1 flex flex-col gap-3 text-subtle text-sm leading-relazed">
           {desc
             .split("\n")
             .map((line) => line.trim())
@@ -93,7 +95,7 @@ export const DemoCard = ({
 
         {/* BUILD WITH */}
         {composedOf && (
-          <p className="text-xs text-neutral-500">
+          <p className="text-xs text-muted">
             Composed of:{" "}
             {composedOf.map((demoId, i) => (
               <span key={demoId}>
@@ -102,12 +104,12 @@ export const DemoCard = ({
                     e.stopPropagation();
                     onSelectDemo?.(demoId);
                   }}
-                  className="text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                  className="text-subtle hover:text-fg transition-colors cursor-pointer"
                 >
                   {demoId}
                 </button>
                 {i < composedOf.length - 1 && (
-                  <span className="mx-1 text-neutral-600">·</span>
+                  <span className="mx-1 text-faint">·</span>
                 )}
               </span>
             ))}

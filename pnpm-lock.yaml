@@ -66,11 +66,11 @@ importers:
   apps/landing:
     dependencies:
       '@a2zb/react':
-        specifier: ^1.0.3
-        version: 1.0.3(@a2zb/styles@1.0.3)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sonner@2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
+        specifier: file:../../../shared-packages/react
+        version: file:../shared-packages/react(@a2zb/styles@file:../shared-packages/styles)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sonner@2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
       '@a2zb/styles':
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: file:../../../shared-packages/styles
+        version: file:../shared-packages/styles
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -92,18 +92,18 @@ importers:
 
 packages:
 
-  '@a2zb/lib@1.0.0':
-    resolution: {integrity: sha512-ZpnYPwJo8qGqf6yFYJb+ruCfgx/xmcM+7hoSPCxoJ9SEtXCimGqKH/R1tHMjjfBLsUJM7RAtjsYLsiF7D/DFWQ==}
+  '@a2zb/lib@1.0.1':
+    resolution: {integrity: sha512-wKrKrnzGNDcr4zFcrr09Z+3OFnXm9nVrS6XYFy36ty90ps/ZLTTATDzvrQ5rkT0CYrmJ112Bq1WJpXLb1IzhoQ==}
 
-  '@a2zb/react@1.0.3':
-    resolution: {integrity: sha512-4nFjaYSnTvnLYxFbfVvVdAJpwrFnpTV4UQ6LkUMCFU4v77RefJ7RwTMMYJpbe+a9fa62eXdBWkDQ63C7g2Uhkw==}
+  '@a2zb/react@file:../shared-packages/react':
+    resolution: {directory: ../shared-packages/react, type: directory}
     peerDependencies:
       '@a2zb/styles': ^1.0.0
       react: ^19
       sonner: ^2.0.7
 
-  '@a2zb/styles@1.0.3':
-    resolution: {integrity: sha512-dLKMWQDDFnb8K/2UTRTknl0Atm3i6LJRxEenQTx9XhBqgHAmOscbznql0mLYMGOZB67WoliNjStxxbIWyZ0Rdw==}
+  '@a2zb/styles@file:../shared-packages/styles':
+    resolution: {directory: ../shared-packages/styles, type: directory}
 
   '@babel/code-frame@7.29.7':
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
@@ -903,6 +903,7 @@ packages:
   eslint@9.39.4:
     resolution: {integrity: sha512-XoMjdBOwe/esVgEvLmNsD3IRHkm7fbKIUGvrleloJXUZgDHig2IPWNniv+GwjyJXzuNqVjlr5+4yVUZjycJwfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1166,6 +1167,11 @@ packages:
 
   lucide-react@0.554.0:
     resolution: {integrity: sha512-St+z29uthEJVx0Is7ellNkgTEhaeSoA42I7JjOCBCrc5X6LYMGSv0P/2uS5HDLTExP5tpiqRD2PyUEOS6s9UXA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  lucide-react@1.41.0:
+    resolution: {integrity: sha512-6lksP35l6KszDKUeRTi4LV7i6DEe0Yzl2ALJm9j4c5xEYN91GdW1xGsawGMOg2mgjF5GHBVX8pKX9kP+cWsP3Q==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -1443,22 +1449,24 @@ packages:
 
 snapshots:
 
-  '@a2zb/lib@1.0.0': {}
+  '@a2zb/lib@1.0.1': {}
 
-  '@a2zb/react@1.0.3(@a2zb/styles@1.0.3)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sonner@2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7))':
+  '@a2zb/react@file:../shared-packages/react(@a2zb/styles@file:../shared-packages/styles)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sonner@2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7))':
     dependencies:
-      '@a2zb/lib': 1.0.0
-      '@a2zb/styles': 1.0.3
+      '@a2zb/lib': 1.0.1
+      '@a2zb/styles': file:../shared-packages/styles
       clsx: 2.1.1
       focus-trap-react: 12.0.3(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      lucide-react: 1.41.0(react@19.2.7)
       react: 19.2.7
       sonner: 2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      tailwind-merge: 3.6.0
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
       - react-dom
 
-  '@a2zb/styles@1.0.3': {}
+  '@a2zb/styles@file:../shared-packages/styles': {}
 
   '@babel/code-frame@7.29.7':
     dependencies:
@@ -2398,6 +2406,10 @@ snapshots:
       yallist: 3.1.1
 
   lucide-react@0.554.0(react@19.2.7):
+    dependencies:
+      react: 19.2.7
+
+  lucide-react@1.41.0(react@19.2.7):
     dependencies:
       react: 19.2.7
 

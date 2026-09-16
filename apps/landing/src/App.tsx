@@ -21,13 +21,13 @@ export default function App() {
   return (
     <div
       className="
-      w-full sm:max-w-[960px] min-h-screen flex flex-col gap-4 justify-between 
-      mx-auto fade-in p-2 mx-auto bg-primary/60"
+      w-full sm:max-w-[960px] min-h-screen flex flex-col gap-4 justify-between
+      mx-auto fade-in p-2 mx-auto"
     >
       {/* HERO */}
       <section
         className="
-          flex flex-col justify-end gap-2
+          flex flex-col justify-end items-center gap-2
           h-32
           "
       >
@@ -44,7 +44,7 @@ export default function App() {
             setActiveTab(tab);
             setSelected(undefined);
           }}
-          className="gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 bg-primary/80 backdrop-blur"
+          className="gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 bg-ground/80 backdrop-blur"
           direction="horizontal"
         >
           {({ item: tab, isSelected, onSelect }) => (
@@ -85,7 +85,7 @@ export default function App() {
                 }
                 className={cn(
                   "scroll-mt-14",
-                  !isSelected && "bg-surface/80 cursor-pointer",
+                  !isSelected && "bg-raised/40 cursor-pointer",
                 )}
               >
                 <ContactCard
@@ -119,7 +119,7 @@ export default function App() {
                   )}
                   className={cn(
                     "scroll-mt-14",
-                    !isSelected && "bg-surface/80 cursor-pointer",
+                    !isSelected && "bg-raised/40 cursor-pointer",
                   )}
                 >
                   <DemoCard {...demo} onSelectDemo={setSelected} />

@@ -15,15 +15,10 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-:root[data-theme="void"] {
-  --accent: #5a5fcc;
-  --accent-weak: rgba(90, 95, 204, 0.5);
-  --accent-strong: #8088e8;
-}
-
 body {
-  background: var(--color-primary);
-  color: var(--text-primary);
+  background: var(--color-ground);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
 }
 
 @theme {

@@ -22,8 +22,8 @@ function OverflowBadge({ names }: { names: string[] }) {
           className="
             absolute bottom-full right-0 mb-2 z-10
             w-max max-w-[12rem] px-2 py-1 rounded
-            bg-black/90 border border-soft/16
-            text-xs text-neutral-300 text-center
+            bg-ground/90 border border-line/16
+            text-xs text-subtle text-center
           "
         >
           {names.join(", ")}
