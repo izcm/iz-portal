@@ -25,7 +25,7 @@ export const DemoCard = ({
         flex flex-col-reverse md:flex-row-reverse gap-4
         border border-extra-faint rounded-lg p-4
         rounded-lg bg-raised bg-raised-gradient border border-faint
-        hover:bg-fg/4
+        transition-[filter] duration-150 hover:brightness-125 
       "
     >
       {/* LINKS & TOOL-BADGES (RIGHT) */}
@@ -56,10 +56,7 @@ export const DemoCard = ({
           }}
         >
           {isLive && (
-            <IconLink
-              href={liveUrl}
-              className="[&>svg:last-child]:text-gold text-muted"
-            >
+            <IconLink href={liveUrl} className="[&>svg:last-child]:text-gold">
               <Radio className={cn(DEFAULT_ICON_CLASSES, "text-gold")} />
               See live
             </IconLink>

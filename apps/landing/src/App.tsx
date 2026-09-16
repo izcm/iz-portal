@@ -44,7 +44,7 @@ export default function App() {
             setActiveTab(tab);
             setSelected(undefined);
           }}
-          className="gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 bg-ground/80 backdrop-blur"
+          className="gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 backdrop-blur"
           direction="horizontal"
         >
           {({ item: tab, isSelected, onSelect }) => (

@@ -9,7 +9,13 @@ const SiIcon = ({ icon }: { icon: { path: string } }) => (
 type ContactCardProps = Omit<ContactInfo, "id" | "href">;
 
 export const ContactCard = ({ icon, platform, handle }: ContactCardProps) => (
-  <div className="flex items-center gap-4 px-4 py-3">
+  <div
+    className="
+      flex items-center gap-4 px-4 py-3
+      rounded-lg bg-raised bg-raised-gradient border border-faint
+      transition-[filter] duration-150 hover:brightness-125
+    "
+  >
     <div className="w-8 flex justify-center shrink-0">
       <SiIcon icon={icon} />
     </div>
