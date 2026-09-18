@@ -101,7 +101,7 @@ export const DemoCard = ({
                     e.stopPropagation();
                     onSelectDemo?.(demoId);
                   }}
-                  className="text-subtle hover:text-fg transition-colors cursor-pointer"
+                  className="inline-flex items-center min-h-10 text-subtle hover:text-fg transition-colors cursor-pointer"
                 >
                   {demoId}
                 </button>

@@ -52,9 +52,8 @@ export default function App() {
               key={tab}
               isSelected={isSelected}
               onSelect={onSelect}
-              focusOnMount={false}
               className={cn(
-                "min-w-[80px] pt-2 text-center transition-colors duration-200 cursor-pointer",
+                "min-w-[80px] subtle-focus min-h-10 flex items-center justify-center text-center transition-colors duration-200 cursor-pointer",
                 "focus-visible:bg-accent/10 ring-0",
                 isSelected && "border-t-2 border-accent/60 text-accent",
                 !isSelected &&

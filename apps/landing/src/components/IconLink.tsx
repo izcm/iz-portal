@@ -13,7 +13,7 @@ export function IconLink({ children, className, ...props }: IconLinkProps) {
       rel="noopener noreferrer"
       {...props}
       className={cn(
-        "flex items-center justify-between gap-3 w-full",
+        "flex items-center justify-between gap-3 w-full min-h-9",
         "text-sm text-subtle no-underline transition-colors hover:text-fg",
         className,
       )}
