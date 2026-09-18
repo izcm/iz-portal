@@ -1,9 +1,7 @@
 import { useState } from "react";
+import { Gallery } from "@a2zb/react";
 
 import { cn } from "./lib/cn";
-
-import { ArrowList } from "./components/ArrowList";
-import { ArrowRow } from "./components/ArrowRow";
 
 import { DemoCard } from "./components/cards/DemoCard";
 import { ContactCard } from "./components/Contact";
@@ -17,6 +15,9 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<"demos" | "contact">("demos");
 
   const [selected, setSelected] = useState<string | undefined>(undefined);
+
+  const selectedContact = contacts.find((contact) => contact.id === selected);
+  const selectedDemo = demos.find((demo) => demo.id === selected);
 
   return (
     <div
@@ -36,95 +37,81 @@ export default function App() {
       </section>
 
       <section className="flex flex-1 flex-col gap-2">
-        <ArrowList
+        <Gallery
           items={tabs}
           getId={(tab) => tab}
-          selectedId={activeTab}
+          selected={activeTab}
           onSelect={(tab) => {
             setActiveTab(tab);
             setSelected(undefined);
           }}
-          className="gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 backdrop-blur"
           direction="horizontal"
-        >
-          {({ item: tab, isSelected, onSelect }) => (
-            <ArrowRow
-              key={tab}
-              isSelected={isSelected}
-              onSelect={onSelect}
-              className={cn(
-                "min-w-[80px] subtle-focus min-h-10 flex items-center justify-center text-center transition-colors duration-200 cursor-pointer",
-                "focus-visible:bg-accent/10 ring-0",
-                isSelected && "border-t-2 border-accent/60 text-accent",
-                !isSelected &&
-                  "hover:border-t-1 border-t-2 border-transparent hover:border-pop/60 hover:border-t-1 text-pop/90",
-              )}
-              bare
-            >
-              {tab}
-            </ArrowRow>
-          )}
-        </ArrowList>
+          htmlUlElementProps={{
+            className:
+              "gap-4 flex flex-row p-1 rounded-none sticky top-0 z-10 backdrop-blur",
+          }}
+          htmlLiElementProps={({ isSelected }) => ({
+            className: cn(
+              "min-w-[80px] subtle-focus min-h-10 flex items-center justify-center text-center transition-colors duration-200 cursor-pointer",
+              isSelected && "border-t-2 border-accent/60 text-accent",
+              !isSelected &&
+                "hover:border-t-1 border-t-2 border-transparent bg-transparent hover:border-pop/60 hover:border-t-1 text-pop/90",
+            ),
+          })}
+          galleryItem={(tab) => tab}
+        />
 
         {activeTab === "contact" && (
-          <ArrowList
+          <Gallery
             items={contacts}
             getId={(contact) => contact.id}
-            selectedId={selected}
+            selected={selectedContact}
             onSelect={(contact) => setSelected(contact.id)}
-            className="flex flex-col gap-3"
-          >
-            {({ item: contact, isSelected, onSelect }) => (
-              <ArrowRow
-                key={contact.id}
-                isSelected={isSelected}
-                onSelect={onSelect}
-                onEnter={() =>
-                  window.open(contact.href, "_blank", "noreferrer")
-                }
-                className={cn(
-                  "scroll-mt-14",
-                  !isSelected && "bg-raised/40 cursor-pointer",
-                )}
-              >
-                <ContactCard
-                  icon={contact.icon}
-                  platform={contact.platform}
-                  handle={contact.handle}
-                />
-              </ArrowRow>
+            onEnter={(contact) =>
+              window.open(contact.href, "_blank", "noreferrer")
+            }
+            htmlUlElementProps={{ className: "flex flex-col gap-3" }}
+            htmlLiElementProps={({ isSelected }) => ({
+              className: cn(
+                "scroll-mt-14",
+                !isSelected && "bg-raised/40 cursor-pointer",
+              ),
+            })}
+            galleryItem={(contact) => (
+              <ContactCard
+                icon={contact.icon}
+                platform={contact.platform}
+                handle={contact.handle}
+              />
             )}
-          </ArrowList>
+          />
         )}
 
         {activeTab === "demos" && (
           <div className="flex flex-col">
-            <ArrowList
+            <Gallery
               items={demos}
               getId={(demo) => demo.id}
-              selectedId={selected}
+              selected={selectedDemo}
               onSelect={(demo) => setSelected(demo.id)}
-              className={"flex flex-col gap-4"}
-            >
-              {({ item: demo, isSelected, onSelect }) => (
-                <ArrowRow
-                  key={demo.id}
-                  isSelected={isSelected}
-                  onSelect={onSelect}
-                  onEnter={() => (
-                    window.open(demo.liveUrl ?? demo.repoLink),
-                    "_blank",
-                    "norefferer"
-                  )}
-                  className={cn(
-                    "scroll-mt-14",
-                    !isSelected && "bg-raised/40 cursor-pointer",
-                  )}
-                >
-                  <DemoCard {...demo} onSelectDemo={setSelected} />
-                </ArrowRow>
+              onEnter={(demo) =>
+                window.open(
+                  demo.liveUrl ?? demo.repoLink,
+                  "_blank",
+                  "noreferrer",
+                )
+              }
+              htmlUlElementProps={{ className: "flex flex-col gap-4" }}
+              htmlLiElementProps={({ isSelected }) => ({
+                className: cn(
+                  "scroll-mt-14 rounded",
+                  !isSelected && "bg-raised/40 cursor-pointer",
+                ),
+              })}
+              galleryItem={(demo) => (
+                <DemoCard {...demo} onSelectDemo={setSelected} />
               )}
-            </ArrowList>
+            />
           </div>
         )}
       </section>

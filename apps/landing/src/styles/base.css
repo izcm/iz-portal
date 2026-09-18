@@ -16,7 +16,7 @@
 
   .subtle-focus:focus-visible {
     box-shadow: none;
-    background: var(--elevated);
+    background: var(--raised);
     color: var(--fg);
   }
 
