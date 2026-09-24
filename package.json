@@ -11,8 +11,8 @@
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
-    "@a2zb/styles": "workspace:*",
-    "@a2zb/react": "workspace:*",
+    "@a2zb/styles": "0.100.0-reset",
+    "@a2zb/react": "0.100.0-reset",
     "clsx": "^2.1.1",
     "lucide-react": "^0.554.0",
     "react": "^19.1.1",
