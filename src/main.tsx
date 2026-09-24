@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 
-document.documentElement.setAttribute("data-theme", "void");
+document.documentElement.setAttribute("data-theme", "runtime");
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

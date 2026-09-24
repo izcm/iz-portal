@@ -1,9 +1,24 @@
 {
-  "name": "a2zb",
+  "name": "landing",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "pnpm --parallel --filter './apps/*' dev"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "@a2zb/styles": "workspace:*",
+    "@a2zb/react": "workspace:*",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.554.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "simple-icons": "^16.24.0",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

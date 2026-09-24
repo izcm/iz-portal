@@ -1,11 +1,10 @@
 import { sortTools, type Demo } from "../../data/demos";
 
-import { IconLink, DEFAULT_ICON_CLASSES } from "../IconLink";
 import { LiveBadge } from "../badges/LiveBadge";
 
-import { Code, Radio } from "../../lib/icons";
-import { cn } from "../../lib/cn";
+import { Code, ExternalLink, Radio } from "../../lib/icons";
 import { IconBadgeGroup } from "./IconBadgeGroup";
+import { IconLink } from "@a2zb/react";
 
 type DemoCardProps = Demo & { onSelectDemo?: (id: string) => void };
 
@@ -56,14 +55,26 @@ export const DemoCard = ({
           }}
         >
           {isLive && (
-            <IconLink href={liveUrl} className="[&>svg:last-child]:text-gold">
-              <Radio className={cn(DEFAULT_ICON_CLASSES, "text-gold")} />
-              See live
+            <IconLink
+              href={liveUrl}
+              icon={<ExternalLink className="text-gold" size={16} />}
+              className="hover:text-gold"
+            >
+              <span className="inline-flex gap-3">
+                <Radio className="text-gold pb-1 " size={20} />
+                See live
+              </span>
             </IconLink>
           )}
-          <IconLink href={repoLink}>
-            <Code className={DEFAULT_ICON_CLASSES} />
-            Visit codebase
+          <IconLink
+            icon={<ExternalLink className="text-accent" size={16} />}
+            href={repoLink}
+            className="hover:text-accent"
+          >
+            <span className="inline-flex gap-3">
+              <Code size={16} className="text-accent" />
+              Visit codebase
+            </span>
           </IconLink>
         </div>
       </div>

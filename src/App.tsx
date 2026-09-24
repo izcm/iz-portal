@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div
       className="
-      w-full sm:max-w-[960px] min-h-screen flex flex-col gap-4 justify-between
+      w-full sm:max-w-[960px] flex-1 min-h-0 flex flex-col gap-4 justify-between
       mx-auto fade-in p-2 mx-auto"
     >
       {/* HERO */}
@@ -32,11 +32,11 @@ export default function App() {
           h-32
           "
       >
-        <h1 className="text-4xl font-semibold">IzBlocks</h1>
+        <h1 className="text-4xl font-semibold">izblocks</h1>
         <p className="hero-kicker">Web3 + full-stack services</p>
       </section>
 
-      <section className="flex flex-1 flex-col gap-2">
+      <section className="flex flex-1 min-h-0 flex-col gap-2">
         <Gallery
           items={tabs}
           getId={(tab) => tab}
@@ -88,7 +88,7 @@ export default function App() {
         )}
 
         {activeTab === "demos" && (
-          <div className="flex flex-col">
+          <div className="flex flex-1 min-h-0 flex-col">
             <Gallery
               items={demos}
               getId={(demo) => demo.id}
@@ -101,7 +101,9 @@ export default function App() {
                   "noreferrer",
                 )
               }
-              htmlUlElementProps={{ className: "flex flex-col gap-4" }}
+              htmlUlElementProps={{
+                className: "flex flex-1 min-h-0 flex-col gap-4",
+              }}
               htmlLiElementProps={({ isSelected }) => ({
                 className: cn(
                   "scroll-mt-14 rounded",
