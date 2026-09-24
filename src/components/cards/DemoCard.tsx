@@ -56,6 +56,7 @@ export const DemoCard = ({
         >
           {isLive && (
             <IconLink
+              external
               href={liveUrl}
               icon={<ExternalLink className="text-gold" size={16} />}
               className="hover:text-gold"
@@ -67,6 +68,7 @@ export const DemoCard = ({
             </IconLink>
           )}
           <IconLink
+            external
             icon={<ExternalLink className="text-accent" size={16} />}
             href={repoLink}
             className="hover:text-accent"
