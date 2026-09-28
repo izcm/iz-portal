@@ -1,6 +1,7 @@
 @import "@a2zb/styles";
 @import "@a2zb/styles/base.css";
 @import "./styles/base.css";
+@import "./styles/theme.css";
 
 ::-webkit-scrollbar {
   width: 6px;

@@ -22,8 +22,8 @@ export const DemoCard = ({
     <div
       className="
         flex flex-col-reverse md:flex-row-reverse gap-4
-        border border-extra-faint rounded-lg p-4
-        rounded-lg bg-raised bg-raised-gradient border border-faint
+        rounded-lg p-4
+        bg-raised bg-raised-gradient border border-extra-faint
         transition-[filter] duration-150 hover:brightness-125 
       "
     >
@@ -46,7 +46,7 @@ export const DemoCard = ({
 
         {/* LINKS */}
         <div
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-2 pointer-fine:gap-1"
           onClick={(e) => e.stopPropagation()}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -59,7 +59,7 @@ export const DemoCard = ({
               external
               href={liveUrl}
               icon={<ExternalLink className="text-gold" size={16} />}
-              className="hover:text-gold"
+              className="hover:text-gold pointer-fine:py-1.5"
             >
               <span className="inline-flex gap-3">
                 <Radio className="text-gold pb-1 " size={20} />
@@ -71,7 +71,7 @@ export const DemoCard = ({
             external
             icon={<ExternalLink className="text-accent" size={16} />}
             href={repoLink}
-            className="hover:text-accent"
+            className="hover:text-accent pointer-fine:py-1.5"
           >
             <span className="inline-flex gap-3">
               <Code size={16} className="text-accent" />
@@ -114,7 +114,7 @@ export const DemoCard = ({
                     e.stopPropagation();
                     onSelectDemo?.(demoId);
                   }}
-                  className="inline-flex items-center min-h-10 text-subtle hover:text-fg transition-colors cursor-pointer"
+                  className="inline-flex items-center pointer-coarse:min-h-10 text-subtle hover:text-fg transition-colors cursor-pointer"
                 >
                   {demoId}
                 </button>

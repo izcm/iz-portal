@@ -12,7 +12,7 @@ export const ContactCard = ({ icon, platform, handle }: ContactCardProps) => (
   <div
     className="
       flex items-center gap-4 px-4 py-3
-      rounded-lg bg-raised bg-raised-gradient border border-faint
+      rounded-lg bg-raised bg-raised-gradient border border-extra-faint
       transition-[filter] duration-150 hover:brightness-125
     "
   >

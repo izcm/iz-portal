@@ -1,0 +1,9 @@
+/* Map the Geist fonts loaded in layout.tsx onto the a2zb tokens */
+/* runtime — a2zb's theme with a darker ground; surfaces pulled down to match */
+:root[data-theme="runtime"] {
+  --ground: #030304;
+  --raised: #0c0c0f;
+  --lowered: #09090b;
+  --elevated: #121317;
+  --elevated-alt: #17181c;
+}
